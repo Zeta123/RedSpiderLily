@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	
+
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="cn.com.chengang.sms.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="cn.com.chengang.sms.Perspective"
+            id="cn.com.chengang.sms.perspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+	<command
+		id="cn.com.chengang.sms.score_perspective"
+		name="打开成绩管理透视图"/>
+   </extension>
+   <extension point="org.eclipse.ui.bindings">
+	<key
+		commandId="org.eclipse.ui.file.exit"
+		schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+		sequence="CTRL+Q"/>
+	<key
+		commandId="cn.com.chengang.sms.score_perspective"
+		schemeld="org.eclipse.ui.defaultAcceleratorConfiguration"
+		sequence="CTRL+ALT+S"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.views">
+	<category
+		name="书籍管理"
+		id="cn.com.chengang.sms.view">
+	</category>
+	<view
+		name="功能导航器"
+		icon = "icons/project.gif"
+		category="cn.com.chengang.sms.view"
+		class="cn.com.chengang.sms.navigator.NavigatorView"
+		id="cn.com.chengang.sms.navigator.NavigatorView">
+	</view>
+	<view
+		name="搜索视图"
+		icon="icons/project.gif"
+		category="cn.com.chengang.sms.view"
+		class="cn.com.chengang.sms.score.SearchView"
+		id="cn.com.chengang.sms.score.SearchView">
+	</view>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+	<editor 
+		name="书籍管理"
+		icon="icons/editing.gif"
+		class="cn.com.chengang.sms.archive.ArchiveEditor"
+		id="cn.com.chengang.sms.archive.ArchiveEditor">
+	</editor>
+   </extension>
+
+</plugin>
