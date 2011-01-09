@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: 桌面书籍管理系统
+Bundle-SymbolicName: cn.com.redspiderlily.bms;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: cn.com.redspiderlily.bms.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.junit
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath:  lib/sqljdbc4.jar,.

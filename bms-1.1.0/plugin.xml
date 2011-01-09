@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="cn.com.redspiderlily.bms.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="cn.com.redspiderlily.bms.Perspective"
+            id="cn.com.redspiderlily.bms.perspective">
+      </perspective>
+   </extension>
+
+
+
+   <extension point="org.eclipse.ui.commands">
+	<command
+		id="cn.com.redspiderlily.bms.score_perspective"
+		name="打开成绩管理透视图"/>
+   </extension>
+   <extension point="org.eclipse.ui.bindings">
+	<key
+		commandId="org.eclipse.ui.file.exit"
+		schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+		sequence="CTRL+Q"/>
+	<key
+		commandId="cn.com.redspiderlily.bms.score_perspective"
+		schemeld="org.eclipse.ui.defaultAcceleratorConfiguration"
+		sequence="CTRL+ALT+S"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.views">
+	<category
+		name="书籍管理"
+		id="cn.com.redspiderlily.bms.view">
+	</category>
+	<view
+		name="功能导航器"
+		icon = "icons/project.gif"
+		category="cn.com.redspiderlily.bms.view"
+		class="cn.com.redspiderlily.bms.navigator.NavigatorView"
+		id="cn.com.redspiderlily.bms.navigator.NavigatorView">
+	</view>
+	<view
+		name="搜索视图"
+		icon="icons/project.gif"
+		category="cn.com.redspiderlily.bms.view"
+		class="cn.com.redspiderlily.bms.score.SearchView"
+		id="cn.com.redspiderlily.bms.score.SearchView">
+	</view>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+	<editor 
+		name="书籍管理"
+		icon="icons/editing.gif"
+		class="cn.com.redspiderlily.bms.archive.ArchiveEditor"
+		id="cn.com.redspiderlily.bms.archive.ArchiveEditor">
+	</editor>
+	<editor
+		name="搜索书籍"
+		icon="icons/editing.gif"
+		class="cn.com.redspiderlily.bms.score.ScoreEditor"
+		id="cn.com.redspiderlily.bms.score.ScoreEditor">
+	</editor>
+	<editor 
+		name="综合"
+		icon="icons/editing.gif"
+		class="cn.com.redspiderlily.bms.archive.ArchiveSyntheticalEditor"
+		id="cn.com.redspiderlily.bms.archive.ArchiveSyntheticalEditor">
+	</editor>
+	<editor 
+		name="个性推荐"
+		icon="icons/editing.gif"
+		class="cn.com.redspiderlily.bms.archive.ArchiveFavouriteEditor"
+		id="cn.com.redspiderlily.bms.archive.ArchiveFavouriteEditor">
+	</editor>
+	<editor 
+		name="最近阅读"
+		icon="icons/editing.gif"
+		class="cn.com.redspiderlily.bms.archive.ArchiveRecentReadEditor"
+		id="cn.com.redspiderlily.bms.archive.ArchiveRecentReadEditor">
+	</editor>
+	<editor 
+		name="分类显示"
+		icon="icons/editing.gif"
+		class="cn.com.redspiderlily.bms.classification.ClassificationBookEditor"
+		id="cn.com.redspiderlily.bms.classification.ClassificationBookEditor">
+	</editor>
+	<editor 
+		name="所有类别"
+		icon="icons/editing.gif"
+		class="cn.com.redspiderlily.bms.classification.ClassificationEditor"
+		id="cn.com.redspiderlily.bms.classification.ClassificationEditor">
+	</editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages">
+	<page 
+		name="桌面书籍管理系统"
+		class="cn.com.redspiderlily.bms.preferences.RootPreferencePage"
+		id="cn.com.redspiderlily.bms.preferences.RootPreferencePage">
+	</page>
+	<page 
+		name="数据库"
+		category="cn.com.redspiderlily.bms.preferences.RootPreferencePage"
+		class="cn.com.redspiderlily.bms.preferences.DBPreferencePage"
+		id="cn.com.redspiderlily.bms.preferences.DBPreferencePage">
+	</page>
+   </extension>
+
+</plugin>
