@@ -1,39 +1,12 @@
-1.0.4导入说明
-更新项目所在目录src/cn/com/chengang/sms目录，将本程序相应目录下所有文件和文件夹复制替换进去
-更新项目plugin.xml文件内容，用本程序包中的相应文件内容替换（将增加的扩展点部分复制进去）
+1.1.0导入说明
 
-1.0.3导入说明
-更新项目所在目录src/cn/com/chengang/sms目录，将本程序相应目录下所有文件和文件夹复制替换进去
-
-1.0.2导入说明
-更新项目所在目录src/cn/com/chengang/sms目录，将本程序相应目录下所有文件和文件夹复制替换进去
-更新项目plugin.xml文件内容，用本程序包中的相应文件内容替换（将增加的扩展点部分复制进去）
-
-1.0.1导入说明
-
-1、eclipse中新建plug-in project；项目名填写sms；下一步、ID填写cn.com.chengang.sms、name填写“书籍管理系统”、rich clinet application选择yes；下一步、hello rcp；完成
+1、eclipse中新建plug-in project；项目名填写bms；下一步、ID填写cn.com.redspiderlily.bms、name填写“书籍管理系统”、rich clinet application选择yes；下一步、hello rcp；完成
 2、打开MANIFEST.MF文件，在最后添加：“Bundle-ClassPath:  lib/sqljdbc4.jar,.”
 3、打开新建项目所在目录，将本程序包中lib、icons文件夹复制替换进去
 4、把新建项目中的plugin.xml文件内容用本程序包中的相应文件内容替换（将增加的扩展点部分复制进去）
-5、打开新建项目所在目录src/cn/com/chengang/sms目录，将本程序相应目录下所有文件和文件夹复制替换进去
+5、打开新建项目所在目录src/cn/com/redspiderlily/bms目录，将本程序相应目录下所有文件和文件夹复制替换进去
 6、打开sql server2005或以上版本的数据库，新建sms数据库；
-在其中新建book表：
-create table book(
-bookName varchar(100),
-bookAuthor varchar(100),
-readTimes int,
-mainClassification varchar(100),
-subClassification varchar(100),
-storePath varchar(500),
-primary key(storePath)
-)
-新建classification表：
-create table classification(
-mainClassification varchar(100),
-subClassification varchar(100),
-primary key(mainClassification,subClassification)
-)
-插入相应实例以便测试。
+相关代码在lib/sql中。
 7、数据库安全性选项中，将登陆方式设为身份登陆，用户名：sa，密码：123
 8、打开数据库配置，启用TCI/IP，重启数据库服务项。（已启用则跳过这一步）
 9、在项目build path->configure bulid path->java build path->libraries->add external jars处添加本程序包lib文件夹下的sqljdbc4.jar
